@@ -57,10 +57,11 @@ export default function DemoPage() {
       const fd = new FormData();
       fd.append("file", file);
 
-      const res = await fetch("http://localhost:8000/predict", {
-        method: "POST",
-        body: fd
-      });
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const res = await fetch(`${API_URL}/predict`, {
+         method: "POST",
+         body: fd
+       })
 
       if (!res.ok) {
         throw new Error(`Server error: ${res.status}`);
