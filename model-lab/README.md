@@ -43,10 +43,13 @@ The API will start at:
 ### 4️⃣ Test the API
 
 You can test using `curl` or any tool like Postman:
-
+Give n = 1 or 2
+- 1 - For using the ViT model from hugging face
+- 2 - For using the Emotion-Ferplus-8 model as mentioned in onnx
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict" \
-  -F "file=@face.jpg"
+  -F "file=@face.jpg" \
+  -F "model_option={n}"
 ```
 
 Response example:
