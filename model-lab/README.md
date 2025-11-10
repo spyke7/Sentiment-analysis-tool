@@ -53,19 +53,19 @@ curl -X POST "http://127.0.0.1:8000/predict" \
 ```
 
 Response example:
-
+*Response for an angry image for model 2*
 ```json
-{
-  "emotion": "happy",
-  "probabilities": {
-    "angry": 0.05,
-    "disgust": 0.02,
-    "fear": 0.03,
-    "happy": 0.78,
-    "sad": 0.04,
-    "surprise": 0.06,
-    "neutral": 0.02
-  }
+{"emotion":"anger",
+    "probabilities":{
+      "neutral":0.6067721843719482,
+      "happiness":0.128993958234787,
+      "surprise":0.22512483596801758,
+      "sadness":0.025787757709622383,
+      "anger":96.17911529541016,
+      "disgust":2.6538150310516357,
+      "fear":0.04158278927206993,
+      "contempt":0.13880738615989685
+    }
 }
 ```
 ## About Emotion-Ferplus-8 Model - 
