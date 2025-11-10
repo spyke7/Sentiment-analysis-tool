@@ -18,8 +18,10 @@ class Model:
     model = AutoModelForImageClassification.from_pretrained(VIT_MODEL_NAME)
     
     def __init__(self, model_path, model_option: int):
+        if (model_option not in (1,2)):
+            raise ValueError(f"model option must be 1 or 2, got {model_option}")
         self.model_option = model_option
-        if (model_option == 2):
+        if (self.model_option == 2):
             # To be used if model conversion is needed in future versions
             # model = onnx.load(model_path)
             # converted_model = version_converter.convert_version(model, 12)
